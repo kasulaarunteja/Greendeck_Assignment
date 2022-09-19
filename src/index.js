@@ -1,4 +1,6 @@
 const express = require('express')
+const cors = require("cors");
+
 
 const connect = require('./configs/db')
 
@@ -10,6 +12,14 @@ const passport = require('./configs/google-oauth')
 const app = express()
 
 app.use(express.json())
+app.use(
+	cors({
+		origin: "*",
+		credentials: true,
+		methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+	})
+);
+
 
 // /register
 app.post('/register', register)
