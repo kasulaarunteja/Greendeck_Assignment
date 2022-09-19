@@ -20,7 +20,9 @@ app.use(
 	})
 );
 
-
+app.get('/', (req,res) => {
+  return res.send('hello good')
+})
 // /register
 app.post('/register', register)
 // .login
