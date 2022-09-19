@@ -56,7 +56,7 @@ app.get(
   },
 )
 
-app.listen(8080, async () => {
+app.listen(process.env.PORT || 8080 , async () => {
   try {
     await connect()
   } catch (err) {
